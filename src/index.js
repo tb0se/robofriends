@@ -1,13 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'; // React bot
+import ReactDOM from 'react-dom'; // DOM (can be React native)
 import './index.css';
-import App from './App';
+import App from './containers/App';
+import 'tachyons';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render(<App/>,
   document.getElementById('root')
 );
 
