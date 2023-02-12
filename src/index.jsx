@@ -4,16 +4,16 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleWare from 'redux-thunk';
-import './index.css';
 import App from './containers/App';
-import 'tachyons';
-import reportWebVitals from './reportWebVitals';
 import { searchRobots, requestRobots } from './reducers';
+import 'tachyons';
+import './index.css';
+
 
 const logger = createLogger();
 
-const rootReducer = combineReducers({searchRobots, requestRobots})
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleWare,logger));
+const rootReducer = combineReducers({ searchRobots, requestRobots })
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleWare, logger));
 
 ReactDOM.render(
   <Provider store={store}>
@@ -21,8 +21,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
